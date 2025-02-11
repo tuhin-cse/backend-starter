@@ -23,8 +23,8 @@ async function bootstrap() {
       in: 'header',
     })
     .setVersion('1.0')
-    .addTag('Auth', 'Auth API')
-    .addTag('User', 'User API')
+    .addTag('Authentication', 'Authentication API')
+    .addTag('User Management', 'User Management API')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

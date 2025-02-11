@@ -2,13 +2,23 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional } from 'class-validator';
 
 export class BaseResponseDto<T> {
-  @ApiProperty({ example: false })
+  @ApiProperty({
+    description: 'Indicates if the response contains an error',
+    example: false,
+  })
   error: boolean;
 
-  @ApiProperty({ example: 'Successful' })
+  @ApiProperty({
+    description: 'Response message',
+    example: 'Operation successful',
+  })
   msg: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Response data',
+    required: false,
+    type: Object,
+  })
   @IsOptional()
   data?: T | T[];
 }
